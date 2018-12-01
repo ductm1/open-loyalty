@@ -44,7 +44,7 @@
     </target>
     <target name="test" description="Setup everything and run some tests">
         <echo>
-            phing test -Dsrc=src/OpenLoyalty/Bundle/TransactionBundle/Tests/Controller/Api/TransactionControllerTest.php -Dno-build
+            phing test -Dsrc=vendor/divante-ltd/open-loyalty-framework/src/OpenLoyalty/Bundle/TransactionBundle/Tests/Controller/Api/TransactionControllerTest.php -Dno-build
         </echo>
         <property name="src" value="" />
         <if>
@@ -78,7 +78,7 @@
         <exec command="bin/console doctrine:schema:update --force" checkreturn="true" passthru="true"/>
         <exec command="bin/console broadway:event-store:schema:drop -n" checkreturn="true" passthru="true"/>
         <exec command="bin/console broadway:event-store:schema:init -n" checkreturn="true" passthru="true"/>
-        <exec command="bin/console doctrine:fixtures:load --fixtures src/OpenLoyalty/Bundle/DemoBundle/_DataFixtures/ORM/ -n" checkreturn="true" passthru="true"/>
+        <exec command="bin/console doctrine:fixtures:load --fixtures vendor/divante-ltd/open-loyalty-framework/src/OpenLoyalty/Bundle/DemoBundle/_DataFixtures/ORM/ -n" checkreturn="true" passthru="true"/>
         <exec command="bin/console oloy:segment:recreate -vv" checkreturn="true" passthru="true"/>
     </target>
 
