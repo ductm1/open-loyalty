@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
 
         chown -R www-data:www-data /opt/open-loyalty/
 
-        sed -i  's/openloyalty.localhost/localhost:8181/g' /opt/open-loyalty/frontend/src/config.js
+        sed -i  's/loyalty.golangvn.net/localhost:8181/g' /opt/open-loyalty/frontend/src/config.js
 
         echo ""
         echo "You can always sync files using:"
